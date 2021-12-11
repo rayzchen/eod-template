@@ -21,6 +21,8 @@ with open("ignored.txt") as f:
     ignored = set(f.read().rstrip().splitlines())
 
 for name in os.listdir("archived"):
+    if not os.path.isdir(os.path.join("archived", "name")):
+        continue
     with open("archived/" + name + "/ignored.txt") as f:
         ignored.update(f.read().rstrip().splitlines())
     with open("archived/" + name + "/list.txt") as f:
