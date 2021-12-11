@@ -3,7 +3,8 @@ import glob
 import os
 import sys
 
-master = "Example Element"
+with open("master.txt") as f:
+    master = f.read().rstrip()
 
 def check_recursive(element, tree=[], seen=[]):
     for ingredient in elements.get(element, []):

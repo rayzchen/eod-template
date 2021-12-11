@@ -2,7 +2,8 @@ import glob
 import os
 import sys
 
-master = "NDTec Rocket"
+with open("master.txt") as f:
+    master = f.read().rstrip()
 
 def capitalize(s):
     return " ".join(map(lambda x: x[0].capitalize() + x[1:], s.split(" ")))
